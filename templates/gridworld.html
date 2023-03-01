@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    .grid_container{
+        margin-top: 0px;
+        margin-left: 0px;
+        padding: 0px 0px;
+        display: inline-grid;
+        background-color: black;
+        width: 71vw;
+        height: 96vh;
+        flex-wrap: wrap;
+        row-gap: .1vh;
+        column-gap: .1vw; 
+        grid-template-columns:.6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw .6vw;
+        /* auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto; */
+        grid-template-rows:auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+    }
+    .column{
+
+        margin-top: 1px;
+        margin-left: 1px;
+        /* width:.6vw; */
+        height:.8vh;
+        column-gap: .1vw;
+        flex-wrap: wrap;
+        display: grid;
+        row-gap: .15vh;
+        
+    }
+    .button{
+        width: .6vw;
+        height: .8vh;
+        display:grid;
+        /* margin-top: 0vh;
+        margin-bottom: 0vh; */
+        /* padding:.02vh .02vw; */
+        /* color:blue; */
+        /* grid-row: x/span 1; 
+        grid-column: y/span 1; */
+    }
+</style>
+</head>
+<body>
+    <div class="grid_container" >
+    <!-- style="display: inline;"> -->
+    {%for column in array%}
+        <div class="column">
+        {%for button in column%}
+                {%if button==1%}
+                <div class="button" style="background-color:black;"></div>
+                {%endif%}
+                {%if button==0%}
+                <div class="button" style="background-color:white;"></div>
+                {%endif%}
+                {%if button==3%}
+                <div class="button" style="background-color:red;"></div>
+                {%endif%}
+                {%if button==2%}
+                <div class="button" style="background-color:orange;"></div>
+                {%endif%}
+                {%if button==4%}
+                <div class="button" style="background-color:grey;"></div>
+                {%endif%}
+                {%if button==6%}
+                <div class="button" style="background-color:purple;"></div>
+                {%endif%}
+                {%if button==5%}
+                <div class="button" style="background-color:green;"></div>
+                {%endif%}
+                <!-- {{button}} -->
+        {%endfor%}
+
+        </div>
+    {%endfor%}
+    </div>
+    <div style="float:right; margin-right: 15vw">
+    <form action="/AStar"> 
+        <!--method='post' value={{maze}}-->
+        <button src="/AStar">Run AStar</button> 
+    </form>
+        <form action="/"> 
+            <!--method='post' value={{maze}}-->
+            <button src="/">Refresh Maze</button> 
+        </form>
+        <form action="/ReverseA*"> 
+            <!--method='post' value={{maze}}-->
+            <button src="/ReverseA*">Run Reverse AStar</button> 
+        </form>
+        <form action="/adaptiveA*"> 
+            <button src="/adaptiveA*">Run Adaptive A Star</button> 
+        </form>
+        <form action="/repeatedAStar"> 
+            <button src="/repeatedAStar*">Run Repeated A Star</button> 
+        </form>
+        </div>
+
+</body>
+</html>
