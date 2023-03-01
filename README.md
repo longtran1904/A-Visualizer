@@ -1,3 +1,7 @@
+# A* Visualizer
+  - This is a coursework in Intro to AI to analyse and compare A* Algorithm with its varariants: Forward A*, Backward A*, Repeated A*, Adaptive A*.
+  - The project was built by Long Tran, Fulton Wilcox III, Daniel Taytel.
+
 ## How to run and demonstrate
   - In the folder, we have 3 executable files has name *Test.py
   - To run those files and demonstrate A* algorithm in **command line**:
